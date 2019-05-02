@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="zh-cn" class="no-js">
+	<head>
+		<meta http-equiv="Content-Type">
+		<meta content="text/html; charset=utf-8">
+		<meta charset="utf-8">
+		<title>猜丁壳--粉丝列表</title>		
+		<meta name="viewport" content="target-densitydpi=device-dpi, width=750px, user-scalable=no">
+		<meta name="format-detection" content="telephone=no">
+		<meta name="format-detection" content="email=no">
+		<script src="js/zepto.min.js"></script>
+		<script type="text/javascript">
+		function adaptscreen(widthnum){
+		 var DEFAULT_WIDTH = widthnum, // 页面的默认宽度
+	        ua = navigator.userAgent.toLowerCase(), // 根据 user agent 的信息获取浏览器信息
+	        deviceWidth = window.screen.width, // 设备的宽度
+	        devicePixelRatio = window.devicePixelRatio || 1, // 物理像素和设备独立像素的比例，默认为1
+	        targetDensitydpi;    // Android4.0以下手机不支持viewport的width，需要设置target-densitydpi
+	        if (ua.indexOf("android") !== -1 && parseFloat(ua.slice(ua.indexOf("android")+8)) < 4) {
+	        	targetDensitydpi = DEFAULT_WIDTH / deviceWidth * devicePixelRatio * 160;
+	        	$('meta[name="viewport"]').attr('content', 'target-densitydpi=' + targetDensitydpi + ', width=device-width, user-scalable=no');
+			}else{
+				$('meta[name="viewport"]').attr('content', 'target-densitydpi=device-dpi, width='+DEFAULT_WIDTH+'px, user-scalable=no');
+			}
+	    }
+	    adaptscreen(750);
+		</script>
+		<link rel="stylesheet" type="text/css" href="css/reset.css?v=6" />
+		<link rel="stylesheet" type="text/css" href="css/fansList.css?v=6" />
+		<link rel="stylesheet" type="text/css" href="css/animations.css?v=6" />
+        <link rel="stylesheet" type="text/css" href="css/load.css?v=6" /> 
+        <link rel="stylesheet" type="text/css" href="css/loading.css?v=6" /> 
+	</head>
+	<body>
+    
+    <!-- 加载动画 strat -->
+    <div id="loading" style="display: none;">
+     	<div class="spinner">
+  			<div class="double-bounce1"></div>
+  			<div class="double-bounce2"></div>
+		</div>
+	</div>
+	<!-- 加载动画 end -->
+
+	<div id="content" class="fansList">
+		<ul class="clearfix">
+			<li>
+				<img src="./imgs/crown.png" / class="crown">
+				<img src="./imgs/df-head.png" class="head" />
+				<div class="info">
+					<p class="name">小妖会馆</p>
+					<p class="location">广东省广州市</p>
+				</div>
+			</li>
+			<li>
+				<img src="./imgs/df-head.png" class="head" />
+				<div class="info">
+					<p class="name">小妖会馆</p>
+					<p class="location">广东省广州市</p>
+				</div>
+			</li>
+			<li>
+				<img src="./imgs/df-head.png" class="head" />
+				<div class="info">
+					<p class="name">小妖会馆</p>
+					<p class="location">广东省广州市</p>
+				</div>
+			</li>
+			<li>
+				<img src="./imgs/df-head.png" class="head" />
+				<div class="info">
+					<p class="name">小妖会馆</p>
+					<p class="location">广东省广州市</p>
+				</div>
+			</li>
+			<li>
+				<img src="./imgs/df-head.png" class="head" />
+				<div class="info">
+					<p class="name">小妖会馆</p>
+					<p class="location">广东省广州市</p>
+				</div>
+			</li>
+			<li>
+				<img src="./imgs/df-head.png" class="head" />
+				<div class="info">
+					<p class="name">小妖会馆</p>
+					<p class="location">广东省广州市</p>
+				</div>
+			</li>
+			<li>
+				<img src="./imgs/df-head.png" class="head" />
+				<div class="info">
+					<p class="name">小妖会馆</p>
+					<p class="location">广东省广州市</p>
+				</div>
+			</li>
+			<li>
+				<img src="./imgs/df-head.png" class="head" />
+				<div class="info">
+					<p class="name">小妖会馆</p>
+					<p class="location">广东省广州市</p>
+				</div>
+			</li>
+			<li>
+				<img src="./imgs/df-head.png" class="head" />
+				<div class="info">
+					<p class="name">小妖会馆</p>
+					<p class="location">广东省广州市</p>
+				</div>
+			</li>
+			<li>
+				<img src="./imgs/df-head.png" class="head" />
+				<div class="info">
+					<p class="name">小妖会馆</p>
+					<p class="location">广东省广州市</p>
+				</div>
+			</li>
+			<li>
+				<img src="./imgs/df-head.png" class="head" />
+				<div class="info">
+					<p class="name">小妖会馆</p>
+					<p class="location">广东省广州市</p>
+				</div>
+			</li>
+			<li>
+				<img src="./imgs/df-head.png" class="head" />
+				<div class="info">
+					<p class="name">小妖会馆</p>
+					<p class="location">广东省广州市</p>
+				</div>
+			</li>
+			<li>
+				<img src="./imgs/df-head.png" class="head" />
+				<div class="info">
+					<p class="name">小妖会馆</p>
+					<p class="location">广东省广州市</p>
+				</div>
+			</li>
+			<li>
+				<img src="./imgs/df-head.png" class="head" />
+				<div class="info">
+					<p class="name">小妖会馆</p>
+					<p class="location">广东省广州市</p>
+				</div>
+			</li>
+		</ul>
+    </div>
+
+	<!-- loading 动画 -->
+	<div class="loading-wrap hide">
+		<div class="loader">
+			<div class="loader-inner ball-beat">
+				<div></div>
+				<div></div>
+				<div></div>
+			</div>
+		</div>
+	</div>
+	<!-- loading 动画 end -->
+
+	<!-- 模拟数据 start -->
+	<div class="loading-data-temp hide">
+			<li>
+				<img src="./imgs/df-head.png" class="head" />
+				<div class="info">
+					<p class="name">小妖会馆</p>
+					<p class="location">广东省广州市</p>
+				</div>
+			</li>
+			<li>
+				<img src="./imgs/df-head.png" class="head" />
+				<div class="info">
+					<p class="name">小妖会馆</p>
+					<p class="location">广东省广州市</p>
+				</div>
+			</li>
+			<li>
+				<img src="./imgs/df-head.png" class="head" />
+				<div class="info">
+					<p class="name">小妖会馆</p>
+					<p class="location">广东省广州市</p>
+				</div>
+			</li>
+			<li>
+				<img src="./imgs/df-head.png" class="head" />
+				<div class="info">
+					<p class="name">小妖会馆</p>
+					<p class="location">广东省广州市</p>
+				</div>
+			</li>
+	</div>
+	<!-- 模拟数据 end -->
+
+
+	<script type="text/javascript">
+	var page = 1; /*初始页数*/
+	var canNextPage = true;
+	$(function(){
+
+		$('body').on('tap','.tips-mask',function(){
+			$('.tips-wrap').addClass('hide');
+		});
+
+		/*翻页逻辑*/
+		$(window).scroll(function(){
+		　　var scrollTop = $(this).scrollTop();
+		　　var scrollHeight = $(document).height();
+		　　var windowHeight = $(this).height();
+			console.log(scrollHeight,scrollTop,windowHeight);
+		　　if(scrollHeight - scrollTop <= windowHeight + 10 && canNextPage){
+		　　　　console.log('到底了');
+	            $('.loading-wrap').removeClass('hide');
+	            canNextPage = false;
+	            setTimeout(function(){
+	            	$('.fansList ul').append($('.loading-data-temp').html());
+	            	++page;
+	            	canNextPage = true;
+	            	$('.loading-wrap').addClass('hide');
+	            },1000)
+		　　}
+		});
+		/*翻页逻辑 end*/
+
+	})
+
+	</script>
+
+	</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

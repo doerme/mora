@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="zh-cn" class="no-js">
+	<head>
+		<meta http-equiv="Content-Type">
+		<meta content="text/html; charset=utf-8">
+		<meta charset="utf-8">
+		<title>猜丁壳--用户中心</title>		
+		<meta name="viewport" content="target-densitydpi=device-dpi, width=750px, user-scalable=no">
+		<meta name="format-detection" content="telephone=no">
+		<meta name="format-detection" content="email=no">
+		<script src="js/zepto.min.js"></script>
+		<script type="text/javascript">
+		function adaptscreen(widthnum){
+		 var DEFAULT_WIDTH = widthnum, // 页面的默认宽度
+	        ua = navigator.userAgent.toLowerCase(), // 根据 user agent 的信息获取浏览器信息
+	        deviceWidth = window.screen.width, // 设备的宽度
+	        devicePixelRatio = window.devicePixelRatio || 1, // 物理像素和设备独立像素的比例，默认为1
+	        targetDensitydpi;    // Android4.0以下手机不支持viewport的width，需要设置target-densitydpi
+	        if (ua.indexOf("android") !== -1 && parseFloat(ua.slice(ua.indexOf("android")+8)) < 4) {
+	        	targetDensitydpi = DEFAULT_WIDTH / deviceWidth * devicePixelRatio * 160;
+	        	$('meta[name="viewport"]').attr('content', 'target-densitydpi=' + targetDensitydpi + ', width=device-width, user-scalable=no');
+			}else{
+				$('meta[name="viewport"]').attr('content', 'target-densitydpi=device-dpi, width='+DEFAULT_WIDTH+'px, user-scalable=no');
+			}
+	    }
+	    adaptscreen(750);
+		</script>
+		<link rel="stylesheet" type="text/css" href="css/reset.css?v=6" />
+		<link rel="stylesheet" type="text/css" href="css/userCenter.css?v=6" />
+		<link rel="stylesheet" type="text/css" href="css/animations.css?v=6" />
+        <link rel="stylesheet" type="text/css" href="css/load.css?v=6" /> 
+	</head>
+	<body>
+
+	<!-- 加载动画 strat -->
+    <div id="loading" style="display: none;">
+     	<div class="spinner">
+  			<div class="double-bounce1"></div>
+  			<div class="double-bounce2"></div>
+		</div>
+	</div>
+	<!-- 加载动画 end -->
+
+	<div id="content" class="userCenter">
+		
+		<!-- 头像 strat -->
+		<div class="userCenter-hd">
+			<img src="./imgs/df-head.png" class="user-head" />
+			<p>小妖会馆</p>	
+		</div>
+		<!-- 头像 end -->
+
+		<!-- 个人信息 start -->
+		<div class="userCenter-bd">
+			<ul class="clearfix">
+				<li>
+					<p class="num">60</p>
+					<p class="text">粉丝</p>
+				</li>
+				<li>
+					<p class="num">30</p>
+					<p class="text">积分</p>
+				</li>
+				<li>
+					<p class="num">280</p>
+					<p class="text">可兑换</p>
+				</li>
+			</ul>
+		</div>
+		<!-- 个人信息 end -->
+		
+		<!-- 操作 start -->
+		<div class="userCenter-ft">
+
+			<a href="#" class="js-btn dib js-btn-duihuan"><span>12</span></a>
+
+			<a href="#" class="js-btn dib js-btn-tixian">60</a>
+
+			<a href="#" class="js-btn dib js-btn-chongzhi">50</a>
+
+			<a href="#" class="js-btn dib js-btn-fensi"></a>
+
+			<a href="#" class="js-btn dib js-btn-erweima"></a>
+
+		</div>
+		<!-- 操作 end -->
+
+		<!-- 充值弹层 start -->
+		<div class="tips-wrap tips-wrap-chongzhi">
+			<div class="tips-mask">
+
+			<span class="tips-back"></span>
+
+			<div class="tips-main">
+
+				<div class="tips-hd">
+					<img src="./imgs/df-head.png" />
+				</div>
+
+				<div class="tips-bd">
+					<input type="text" value="50" />	
+				</div>
+
+				<div class="tips-ft">
+					<a href="javascript:;" class="dib tips-bt"></a>
+				</div>
+			</div>
+		</div>
+		<!-- 充值弹层 end -->
+
+    </div>
+
+    <script type="text/javascript">
+		$('body').on('tap','.tips-mask, .tips-back',function(){
+			$('.tips-wrap').addClass('hide');
+		});
+    </script>
+
+	</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

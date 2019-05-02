@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="zh-cn" class="no-js">
+	<head>
+		<meta http-equiv="Content-Type">
+		<meta content="text/html; charset=utf-8">
+		<meta charset="utf-8">
+		<title>猜丁壳</title>		
+		<meta name="viewport" content="target-densitydpi=device-dpi, width=750px, user-scalable=no">
+		<meta name="format-detection" content="telephone=no">
+		<meta name="format-detection" content="email=no">
+		<script src="js/zepto.min.js"></script>
+		<script type="text/javascript">
+		function adaptscreen(widthnum){
+			try{
+			 var DEFAULT_WIDTH = widthnum, // 页面的默认宽度
+		        ua = navigator.userAgent.toLowerCase(), // 根据 user agent 的信息获取浏览器信息
+		        deviceWidth = window.screen.width, // 设备的宽度
+		        devicePixelRatio = window.devicePixelRatio || 1, // 物理像素和设备独立像素的比例，默认为1
+		        targetDensitydpi;    // Android4.0以下手机不支持viewport的width，需要设置target-densitydpi
+		        if (ua.indexOf("android") !== -1 && parseFloat(ua.slice(ua.indexOf("android")+8)) < 4) {
+		        	targetDensitydpi = DEFAULT_WIDTH / deviceWidth * devicePixelRatio * 160;
+		        	$('meta[name="viewport"]').attr('content', 'target-densitydpi=' + targetDensitydpi + ', width=device-width, user-scalable=no');
+				}else{
+					$('meta[name="viewport"]').attr('content', 'target-densitydpi=device-dpi, width='+DEFAULT_WIDTH+'px, user-scalable=no');
+				}
+			}catch(e){
+				console.log('dpi error',e);
+			}
+	    }
+	    adaptscreen(750);
+		</script>
+		<link rel="stylesheet" type="text/css" href="css/reset.css?v=6" />
+		<link rel="stylesheet" type="text/css" href="css/index.css?v=6" />
+		<link rel="stylesheet" type="text/css" href="css/animations.css?v=6" />
+        <link rel="stylesheet" type="text/css" href="css/load.css?v=6" /> 
+	</head>
+	<body>
+    <div id="loading">
+     	<div class="spinner">
+  			<div class="double-bounce1"></div>
+  			<div class="double-bounce2"></div>
+		</div>
+	</div>
+	<div id="content" style="display:none">
+		<div class="page page-1-1 page-index" data-lock-up="1" data-lock-down="1">
+			<div class="wrap">
+				
+			</div>
+		</div>
+		
+    </div>
+
+
+    <!-- 弹窗 恭喜提现成功 -->
+    <div class="common-tips-block js-deposit-tips">
+    	<div class="tips-block-mask js-tips-block-mask"></div>
+    	<div class="ctb-main">
+    		<div class="ctbm-txt">恭喜！提现成功</div>
+    		<a href="javascript:;" class="ctbm-bt df_bt js-dpsuer-bt">确定</a>
+    		<!--<img class="ctbm-bt js-dpsuer-bt" src="./imgs/sure_bt.png" />-->
+    	</div>
+    </div>
+    <!-- 弹窗 恭喜提现成功end -->
+
+    <!-- 弹窗 恭喜提现成功 -->
+    <div class="common-tips-block js-deposit-tips">
+    	<div class="tips-block-mask js-tips-block-mask"></div>
+    	<div class="ctb-main">
+    		<div class="ctbm-txt">余额不足 提现失败</div>
+    		<a href="javascript:;" class="ctbm-bt df_bt js-gousercenter-bt">返回会员中心</a>
+    		<!--<img class="ctbm-bt js-gousercenter-bt" src="./imgs/usercenter_bt.png" />-->
+    	</div>
+    </div>
+    <!-- 弹窗 恭喜提现成功end -->
+
+    <!-- 提现弹窗 -->
+    <div class="common-tips-block max">
+    	<div class="tips-block-mask js-tips-block-mask"></div>
+    	<div class="ctb-main">
+    		<img class="user_head" src="./imgs/eg/head.jpg">
+    		<input type="text" class="input_num" name="" value="" placeholder="输入金额">
+    		<a href="javascript:;" class="ctbm-bt df_bt js-tixian-bt">提现</a>
+    		<!--<img class="ctbm-bt js-tixian-bt" src="./imgs/tixian_bt.png" />-->
+    	</div>
+    </div>
+    <!-- 提现弹窗 end -->
+
+    <!-- 关注弹窗 -->
+    <div class="common-tips-block tips">
+    	<div class="tips-block-mask js-tips-block-mask"></div>
+    	<div class="ctb-main">
+    	<div class="ctbm-txt">成功关注 小妖会馆</div>
+    	<a href="javascript:;" class="ctbm-bt df_bt js-gousercenter-bt">返回会员中心</a>
+    	<!--<img class="ctbm-bt js-gousercenter-bt" src="./imgs/usercenter_bt.png" />-->
+    	</div>
+    </div>
+    <!-- 关注弹窗 end -->
+
+
+    <div id="share">
+    	<div class="shareImg"></div>
+    </div>
+
+    <div class="tisblock mask"></div>
+    <div class="tisblock main"></div>
+
+
+    <script type="text/javascript">
+	gSound = 'imgs/samsung.mp3';
+	dontprevent = true;
+	</script>
+	<script src="js/index.js?v=6"></script>
+    <script type="text/javascript">
+	document.onreadystatechange = loading; 
+	var loading_pc_num=0;
+	var loading_pc=setInterval(function(){
+		loading_pc_num+=parseInt(Math.random()*6);
+		$('.loading_main').html(loading_pc_num+'%');
+		if(loading_pc_num>90){
+			clearInterval(loading_pc);
+		}
+	},300);
+
+	function loading(){
+		if(document.readyState == "complete"){
+			loading_pc_num=94;
+			setTimeout(function(){
+				startpage();
+			},100);
+		}
+	}
+
+	function startpage(){
+		$("#loading").hide();
+		$("#content").show();
+		//goNext();
+		/*金币声音载入*/
+		$('<audio id="chatAudio"><source src="./music/coin_music.wav" type="audio/wav"></audio>').appendTo('body');
+	}
+
+	
+	$(function(){
+		
+		/*点蒙层关闭弹窗*/
+		$('.js-tips-block-mask').on('tap',function(){
+			$(this).parent('div').addClass('hide');
+		})
+	
+	});
+	</script>
+	</body>
+</html>
